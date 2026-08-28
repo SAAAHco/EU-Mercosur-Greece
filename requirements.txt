@@ -1,0 +1,7 @@
+numpy
+pandas
+openpyxl
+matplotlib
+xgboost
+scikit-learn
+Pillow
