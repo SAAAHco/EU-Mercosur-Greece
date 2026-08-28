@@ -139,6 +139,10 @@ phase-ins, TRQs), ELSTAT 2020 Agricultural–Livestock Census, FADN Farm Economy
 and OECD environmental-tax indicators. Full parameter provenance is reported in the
 article's supplementary appendix (Table A2).
 
+## Created by
+Dr. Zainab Ashkanani
+Email: Ashkanani@saaah.co
+
 ## License and citation
 
 Code is released under the MIT License (see `LICENSE`). If you use this toolkit, please
