@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this code, data or the templates, please cite the article below."
+title: "Trade-agreement exposure toolkit and replication package for: Protection without exposure, exposure without protection: the distributive and environmental incidence of the EU-Mercosur Agreement in Greek agriculture"
+version: "7.5.1"
+date-released: "2026-09-04"
+license: MIT
+authors:
+  - family-names: Pappas
+    given-names: Konstantinos
+    orcid: "https://orcid.org/0000-0001-7816-6359"
+  - family-names: Ashkanani
+    given-names: Zainab
+    orcid: "https://orcid.org/0000-0002-3628-9622"
+  - family-names: Albatayneh
+    given-names: Rashed
+preferred-citation:
+  type: article
+  title: "Protection without exposure, exposure without protection: the distributive and environmental incidence of the EU-Mercosur Agreement in Greek agriculture"
+  journal: "Ecological Economics"
+  year: 2026
+  notes: "Submitted"
+  authors:
+    - family-names: Pappas
+      given-names: Konstantinos
+    - family-names: Ashkanani
+      given-names: Zainab
+    - family-names: Albatayneh
+      given-names: Rashed
