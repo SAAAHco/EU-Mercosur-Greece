@@ -1,8 +1,8 @@
 cff-version: 1.2.0
-message: "If you use this code, data or the templates, please cite the article below."
-title: "Trade-agreement exposure toolkit and replication package for: Protection without exposure, exposure without protection: the distributive and environmental incidence of the EU-Mercosur Agreement in Greek agriculture"
-version: "7.5.1"
-date-released: "2026-09-04"
+message: "If you use this code or data, please cite the article below."
+title: "Protest without Exposure: Replication Package for the Line-Level Incidence of the EU-Mercosur Agreement on Greece"
+version: "2.0.0"
+date-released: "2026-09-29"
 license: MIT
 authors:
   - family-names: Pappas
@@ -15,8 +15,8 @@ authors:
     given-names: Rashed
 preferred-citation:
   type: article
-  title: "Protection without exposure, exposure without protection: the distributive and environmental incidence of the EU-Mercosur Agreement in Greek agriculture"
-  journal: "Ecological Economics"
+  title: "Protest without Exposure: Why Greece Backed the EU-Mercosur Agreement"
+  journal: "JCMS: Journal of Common Market Studies"
   year: 2026
   notes: "Submitted"
   authors:

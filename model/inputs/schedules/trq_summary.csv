@@ -1,0 +1,37 @@
+opening_party,notation,product,in_quota_rate,year0_quantity,final_quantity,final_quantity_reached_in_year,unit,eligible_origin_or_allocation,reference_in_Annex_2-A
+EU,BF1,fresh/chilled beef,7.5%,9075,54450,5,t cwe,all MERCOSUR,Sec B para 1
+EU,BF2,frozen beef incl. for processing,7.5%,7425,44550,5,t cwe,all MERCOSUR,Sec B para 3
+EU,(existing WTO Hilton-type quotas 09.4450/4452/4453/4455),high-quality beef,0% (in-quota duty 20% eliminated at EIF),,,0,,all MERCOSUR,Sec B para 2
+EU,PK,pigmeat,83 EUR/t,4167,25000,5,t cwe,"all MERCOSUR (+1,500 t duty-free for Paraguay only)",Sec B para 4
+EU,PY1,boneless poultry and preparations,0%,15000,90000,5,t cwe,all MERCOSUR,Sec B para 5
+EU,PY2,bone-in poultry,0%,15000,90000,5,t cwe,all MERCOSUR,Sec B para 6
+EU,MP,milk powders,preference 10% of base rising to 100% (year 10),1000,10000,10,t,all MERCOSUR,Sec B para 7
+EU,CE,cheese,preference 10% rising to 100% (year 10),3000,30000,10,t,all MERCOSUR,Sec B para 8
+EU,IF,infant formula,preference 10% rising to 100% (year 10),500,5000,10,t,all MERCOSUR,Sec B para 9
+EU,ME,maize and sorghum,0%,166667,1000000,5,t,all MERCOSUR,Sec B para 10
+EU,RE,rice,0%,10000,60000,5,t,all MERCOSUR,Sec B para 11
+EU,SR,raw cane sugar for refining,"0% (inside EU WTO quota 09.4318, Brazil)",180000,180000,0,t,"Brazil 180,000 t; Paraguay 10,000 t duty-free; AR/UY base rate",Sec B para 12
+EU,OS,other sugars,50% preference on base rate,2000,2000,0,t,all MERCOSUR,Sec B para 13
+EU,EG1,egg products,0%,500,3000,5,t shell-egg equivalent,all MERCOSUR,Sec B para 14
+EU,EG2,egg albumins,0%,500,3000,5,t shell-egg equivalent,all MERCOSUR,Sec B para 15
+EU,HY,honey,0%,7500,45000,5,t,all MERCOSUR,Sec B para 16
+EU,RM,rum / cane spirits,0%,400,2400,5,t pure alcohol,all MERCOSUR,Sec B para 17
+EU,SC,sweetcorn,0%,1000,1000,0,t,all MERCOSUR,Sec B para 18
+EU,SH1,maize and manioc starch,50% of base rate,1500,1500,0,t,all MERCOSUR,Sec B para 19
+EU,SH2,starch derivatives,0%,100,600,5,t,all MERCOSUR,Sec B para 20
+EU,EL,ethanol - all uses,6.4 EUR/hl undenatured; 3.4 EUR/hl denatured,33333,200000,5,t,all MERCOSUR,Sec B para 21
+EU,EL,ethanol - chemical industry use,0%,75000,450000,5,t,all MERCOSUR,Sec B para 21
+EU,GC,garlic,preference 30% rising to 100% (year 7),1875,15000,7,t,all MERCOSUR,Sec B para 22
+EU,BD (not shown in staging column; lines 38260010/90 are staged 10),biodiesel,0%,50000,50000,0,t,Paraguay only; others follow staging 10,Sec B para 23
+MERCOSUR,TRQ-1,milk powders,preference 10% rising to 100% (year 10),1000,10000,10,t,EU,Sec C para 1
+MERCOSUR,TRQ-2,cheese,preference 10% rising to 100% (year 10),3000,30000,10,t,EU,Sec C para 2
+MERCOSUR,TRQ-3,infant formula,preference 10% rising to 100% (year 10),500,5000,10,t,EU,Sec C para 3
+MERCOSUR,TRQ-4,garlic,preference 30% rising to 100% (year 7),1875,15000,7,t,EU,Sec C para 4
+MERCOSUR,CH1,chocolate NCM 1806.20,16.2% falling to 1.8% (yr 8); free yr 9,1710,4760,8,t,EU,Sec A para 6(l)
+MERCOSUR,CH1,chocolate NCM 1806.90,18.0% falling to 2.0% (yr 8); free yr 9,6320,17640,8,t,EU,Sec A para 6(l)
+MERCOSUR,CH2,white chocolate NCM 1704.90.10,18.7% falling to 1.3% (yr 13); free yr 14,771,2030,13,t,EU,Sec A para 6(m)
+MERCOSUR,CH2,cocoa powder NCM 1806.10,16.8% falling to 1.2% (yr 13); free yr 14,90,150,13,t,EU,Sec A para 6(m)
+MERCOSUR,CH2,chocolate NCM 1806.31,18.7% falling to 1.3% (yr 13); free yr 14,1890,4380,13,t,EU,Sec A para 6(m)
+MERCOSUR,CH2,chocolate NCM 1806.32,18.7% falling to 1.3% (yr 13); free yr 14,1800,5200,13,t,EU,Sec A para 6(m)
+MERCOSUR,T1,prepared tomatoes NCM 2002.10,12.6% falling to 1.4% (yr 8); free yr 9,7500,7500,8,t,EU,Sec A para 6(n)
+MERCOSUR,15V,vehicles (8701/8703/8704),50% of base rate to end of year 8,50000,50000,8,units,"EU (allocated by importing state AR 15,500 / BR 32,000 / PY 750 / UY 1,750)",Sec A para 6(h)

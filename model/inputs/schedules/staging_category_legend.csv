@@ -1,0 +1,50 @@
+code_as_in_schedule,applies_to,type,n_stages,duty_free_from_year,final_cut_pct_of_base,meaning,reference,n_lines_EU_2-A-1,n_lines_MERCOSUR_2-A-2
+0,EU+MERCOSUR,linear elimination,1,0,100,Duty eliminated at entry into force (EIF); duty-free from EIF,Annex 2-A Sec A para 6(a),5090,1075
+4,EU+MERCOSUR,linear elimination,5,4,100,"5 equal annual cuts (20% per step, first at EIF); duty-free 1 Jan year 4",Annex 2-A Sec A para 6(b),1709,2226
+7,EU+MERCOSUR,linear elimination,8,7,100,8 equal annual cuts (12.5%); duty-free 1 Jan year 7,Annex 2-A Sec A para 6(c),656,0
+8,EU+MERCOSUR,linear elimination,9,8,100,9 equal annual cuts (11.1%); duty-free 1 Jan year 8,Annex 2-A Sec A para 6(d),849,1370
+10,EU+MERCOSUR,linear elimination,11,10,100,11 equal annual cuts (9.1%); duty-free 1 Jan year 10,Annex 2-A Sec A para 6(e),589,3523
+15,EU+MERCOSUR (used only in Appendix 2-A-2),linear elimination,16,15,100,16 equal annual cuts (6.25%); duty-free 1 Jan year 15,Annex 2-A Sec A para 6(g),0,899
+15V,MERCOSUR,back-loaded elimination + TRQ,9,15,100,"Vehicles (14 NCM-2022 items in 8701/8703/8704): base rate to end of year 6; cumulative cuts 19/38.1/57.1/64.3/71.4/78.6/85.7/92.9/100% in years 7-15; plus 50% cut of base within a 50,000-unit annual quota from EIF to end of year 8 (AR 15,500; BR 32,000; PY 750; UY 1,750 units)",Annex 2-A Sec A para 6(h) + Chronogram table,0,10
+See comments,MERCOSUR,special vehicle regime,,18 / 25 / 30,100,"NCM 87039000: EV and hybrids (HS2022 8703.40-.80 excl. H2) 28.6% cut at EIF to end year 5 (AR/BR 25%, UY 16.4%, PY 14.3%), duty-free 1 Jan year 18; hydrogen fuel-cell (ex 8703.80) base to year 6, 28.6% cut years 7-12, duty-free year 25; HS2022 8703.90 base to year 6, 28.6% cut years 7-17, duty-free year 30","Annex 2-A Sec A para 6(g),(i),(j),(k)",0,1
+SW/12,EU+MERCOSUR,conditional,1,0 or 12,100,"Sparkling wine: duty-free at EIF if customs value >= 8 USD FOB/litre; otherwise base rate for 12 years, duty-free 1 Jan year 12",Annex 2-A Sec A para 6(f),4,1
+4-EG,EU,linear elimination (conditional),5,4,100,"Shell eggs 04072100, 04079010: 5 equal cuts, duty-free year 4; requires animal-welfare certificate (Dir. 1999/74/EC or equivalent)",Annex 2-A Sec A para 6(o),2,0
+FP30 %,EU (MERCOSUR spells it FP 30 %),partial reduction,1,never,30,Fixed 30% reduction of base rate at EIF; stays at 70% of base (butter),Annex 2-A Sec A para 6(p),5,1
+FP50 %,EU (MERCOSUR spells it FP 50 %),partial reduction,1,never,50,Fixed 50% reduction of base rate at EIF; stays at 50% of base (yoghurt),Annex 2-A Sec A para 6(q),12,1
+50 %,EU,partial reduction,5,never,50,50% reduction phased in over 5 equal annual stages; 50% of base rate from 1 Jan year 4,Annex 2-A Sec A para 6(r),10,0
+0/EP,EU,entry-price line,1,0,ad valorem only,Ad valorem component eliminated at EIF; entry-price specific duty (triggered when import price < entry price) maintained,Annex 2-A Sec A para 6(s),8,0
+7/EP,EU,entry-price line,8,7,ad valorem only,Ad valorem component eliminated in 8 equal stages; entry-price specific duty maintained,Annex 2-A Sec A para 6(t),3,0
+10/EP,EU,entry-price line,11,10,ad valorem only,Ad valorem component eliminated in 11 equal stages; entry-price specific duty maintained,Annex 2-A Sec A para 6(u),10,0
+E,EU+MERCOSUR,exclusion,,never,0,Excluded from tariff preferences; remains at base rate,Annex 2-A Sec A para 6(v),106,894
+BA,EU,fixed specific rate,1,never,to 75 EUR/t,"Bananas 08039010: 75 EUR/t from EIF (base 136 EUR/t); Notes column ""75EUR/t at EIF""",Annex 2-A Sec A para 6(w),1,0
+0 + EA/10; OS ≥ 70 %,EU,mixed (ad valorem + agricultural component EA),11,10,100,"Ad valorem eliminated at EIF; EA for products <70% sugar cut in 11 equal stages, duty-free year 10; products >=70% sugar only via TRQ-OS (Annex text writes ""0 + 10 EA / OS >= 70 %"")",Annex 2-A Sec A para 6(x),2,0
+10/OS ≥ 70 %,EU,mixed,11,10,100,"Products <70% sugar: 11 equal stages, duty-free year 10; >=70% sugar: TRQ-OS only",Annex 2-A Sec A para 6(y),3,0
+CE/E,EU,TRQ + exclusion,,,,"04061020 fresh cheese: inside TRQ-CE, but mozzarella excluded (Notes: ""E for mozzarella"")",Appendix 2-A-1 Notes column,1,0
+BF1,EU,TRQ,,,,TRQ-BF1 (fresh/chilled beef); in-quota rate and volumes in Annex 2-A Sec B para 1; out-of-quota = base rate (no liberalisation),Annex 2-A Sec A para 8; Sec B para 1,7,0
+BF2,EU,TRQ,,,,TRQ-BF2 (frozen beef incl. for processing); in-quota rate and volumes in Annex 2-A Sec B para 3; out-of-quota = base rate (no liberalisation),Annex 2-A Sec A para 8; Sec B para 3,15,0
+PK,EU,TRQ,,,,TRQ-PK (pigmeat); in-quota rate and volumes in Annex 2-A Sec B para 4; out-of-quota = base rate (no liberalisation),Annex 2-A Sec A para 8; Sec B para 4,42,0
+PY1,EU,TRQ,,,,TRQ-PY1 (boneless poultry and preparations); in-quota rate and volumes in Annex 2-A Sec B para 5; out-of-quota = base rate (no liberalisation),Annex 2-A Sec A para 8; Sec B para 5,25,0
+PY2,EU,TRQ,,,,TRQ-PY2 (bone-in poultry); in-quota rate and volumes in Annex 2-A Sec B para 6; out-of-quota = base rate (no liberalisation),Annex 2-A Sec A para 8; Sec B para 6,85,0
+MP,EU,TRQ,,,,TRQ-MP (milk powders); in-quota rate and volumes in Annex 2-A Sec B para 7; out-of-quota = base rate (no liberalisation),Annex 2-A Sec A para 8; Sec B para 7,13,0
+CE,EU,TRQ,,,,TRQ-CE (cheese); in-quota rate and volumes in Annex 2-A Sec B para 8; out-of-quota = base rate (no liberalisation),Annex 2-A Sec A para 8; Sec B para 8,43,0
+IF,EU,TRQ,,,,TRQ-IF (infant formula); in-quota rate and volumes in Annex 2-A Sec B para 9; out-of-quota = base rate (no liberalisation),Annex 2-A Sec A para 8; Sec B para 9,1,0
+ME,EU,TRQ,,,,TRQ-ME (maize and sorghum); in-quota rate and volumes in Annex 2-A Sec B para 10; out-of-quota = base rate (no liberalisation),Annex 2-A Sec A para 8; Sec B para 10,4,0
+RE,EU,TRQ,,,,TRQ-RE (rice); in-quota rate and volumes in Annex 2-A Sec B para 11; out-of-quota = base rate (no liberalisation),Annex 2-A Sec A para 8; Sec B para 11,32,0
+SR,EU,TRQ,,,,TRQ-SR (raw cane sugar for refining); in-quota rate and volumes in Annex 2-A Sec B para 12; out-of-quota = base rate (no liberalisation),Annex 2-A Sec A para 8; Sec B para 12,2,0
+OS,EU,TRQ,,,,TRQ-OS (other sugars); in-quota rate and volumes in Annex 2-A Sec B para 13; out-of-quota = base rate (no liberalisation),Annex 2-A Sec A para 8; Sec B para 13,16,0
+EG1,EU,TRQ,,,,TRQ-EG1 (egg products); in-quota rate and volumes in Annex 2-A Sec B para 14; out-of-quota = base rate (no liberalisation),Annex 2-A Sec A para 8; Sec B para 14,5,0
+EG2,EU,TRQ,,,,TRQ-EG2 (egg albumins); in-quota rate and volumes in Annex 2-A Sec B para 15; out-of-quota = base rate (no liberalisation),Annex 2-A Sec A para 8; Sec B para 15,2,0
+HY,EU,TRQ,,,,TRQ-HY (honey); in-quota rate and volumes in Annex 2-A Sec B para 16; out-of-quota = base rate (no liberalisation),Annex 2-A Sec A para 8; Sec B para 16,1,0
+RM,EU,TRQ,,,,TRQ-RM (rum/cane spirits); in-quota rate and volumes in Annex 2-A Sec B para 17; out-of-quota = base rate (no liberalisation),Annex 2-A Sec A para 8; Sec B para 17,2,0
+SC,EU,TRQ,,,,TRQ-SC (sweetcorn); in-quota rate and volumes in Annex 2-A Sec B para 18; out-of-quota = base rate (no liberalisation),Annex 2-A Sec A para 8; Sec B para 18,3,0
+SH1,EU,TRQ,,,,TRQ-SH1 (maize and manioc starch); in-quota rate and volumes in Annex 2-A Sec B para 19; out-of-quota = base rate (no liberalisation),Annex 2-A Sec A para 8; Sec B para 19,2,0
+SH2,EU,TRQ,,,,TRQ-SH2 (starch derivatives); in-quota rate and volumes in Annex 2-A Sec B para 20; out-of-quota = base rate (no liberalisation),Annex 2-A Sec A para 8; Sec B para 20,11,0
+EL,EU,TRQ,,,,TRQ-EL (ethanol); in-quota rate and volumes in Annex 2-A Sec B para 21; out-of-quota = base rate (no liberalisation),Annex 2-A Sec A para 8; Sec B para 21,4,0
+GC,EU,TRQ,,,,TRQ-GC (garlic); in-quota rate and volumes in Annex 2-A Sec B para 22; out-of-quota = base rate (no liberalisation),Annex 2-A Sec A para 8; Sec B para 22,1,0
+TRQ-1,MERCOSUR,TRQ,,,,TRQ-1 (milk powders); in-quota preference and volumes in Annex 2-A Sec C para 1; out-of-quota = base rate,Annex 2-A Sec A para 8; Sec C para 1,0,8
+TRQ-2,MERCOSUR,TRQ,,,,TRQ-2 (cheese); in-quota preference and volumes in Annex 2-A Sec C para 2; out-of-quota = base rate,Annex 2-A Sec A para 8; Sec C para 2,0,8
+TRQ-3,MERCOSUR,TRQ,,,,TRQ-3 (infant formula); in-quota preference and volumes in Annex 2-A Sec C para 3; out-of-quota = base rate,Annex 2-A Sec A para 8; Sec C para 3,0,3
+TRQ-4,MERCOSUR,TRQ,,,,TRQ-4 (garlic); in-quota preference and volumes in Annex 2-A Sec C para 4; out-of-quota = base rate,Annex 2-A Sec A para 8; Sec C para 4,0,1
+CH1,MERCOSUR,TRQ with declining in-quota rate,,9,100,Chocolate NCM 1806.20 / 1806.90: in-quota rate falls yearly and quota rises; quota and out-of-quota duty end in year 9 (duty-free); PY out-of-quota 2% on 1806.90,Annex 2-A Sec A para 6(l),0,2
+CH2,MERCOSUR,TRQ with declining in-quota rate,,14,100,"NCM 1704.90.10, 1806.10, 1806.31, 1806.32: declining in-quota rates, duty-free year 14",Annex 2-A Sec A para 6(m),0,6
+T1,MERCOSUR,TRQ with declining in-quota rate,,9,100,"Prepared tomatoes NCM 2002.10: 7,500 t quota; in-quota 12.6% (year 0) to 1.4% (year 8); duty-free year 9; out-of-quota 14% until then",Annex 2-A Sec A para 6(n),0,1

@@ -1,0 +1,20 @@
+hs6,rank_by_import_value,traded_CN8_share_2022_24,conventional_duty_TARIC,greek_uv_2022_24,AVE_at_greek_uv_pct,wits_tau0_pct,recommended_tau0_pct,staging_of_traded_CN8,v8_r_path_issue,dY10_imports_musd_from_fix,notes
+240120,1,"24012085 BR 90%, 24012035 BR 5%, 24012035 AR 4%, 24012085 AR 1%","Virginia/Burley (TARIC ..10, certificate of authenticity): 18.4% MIN 22 MAX 24 EUR/100kg; other (..90): 11.2% MIN 22 MAX 56 EUR/100kg","6.05 EUR/kg (4.6-7.4)",4.04 (certified) / 9.12 (uncertified),5.97,4.04 (sensitivity 9.12),4,none,-10.32 (+16.07 if uncertified),"MAX binds at Greek UV; TARIC Mercosur pref 8.9% MIN 17.6 MAX 19.2 = cat 4 year 0"
+080550,2,"08055010 lemons AR 98%, 08055090 limes 2%","lemons 6.4% (entry price 55.8 EUR/100kg; AR SIV 81.3, not binding); limes 12.8%","0.89 EUR/kg",6.5,12.8,6.51,7,none,-0.84,"WITS applies the lime rate to lemons"
+271019,3,"27101951 BR 99.9%","fuel oil for a specific process: 0% under authorised use (base 3.5%)","0.82 EUR/kg",0.0,1.97,0.0,0,"avg r0 0.096 vs 0",-0.07,
+030617,4,"03061799 AR 100% (Pleoticus muelleri)","12%; ATQ 09.2826 0% for processing (reported)","6.37 EUR/kg",12.0 (0 if ATQ),12.0,12.0 (upper bound),4,"avg r0 0.55 vs 0.80",0.00,"ATQ share unknown"
+030743,5,"03074392 AR+UY 100% (Illex spp.)","8%; ATQ 0% for processing (reported)","3.3 EUR/kg",8.0 (0 if ATQ),7.18,8.0 (upper bound),0,"hs4 fallback, all 0: ok",+0.78,
+380610,6,"38061000 BR 100%","5%","1.34 EUR/kg",5.0,5.0,5.0,4,none,0,
+220720,7,"22072000 BR 100%","10.2 EUR/hl","0.80 EUR/kg (0.66-0.88)",16.1,10.74,16.1,EL TRQ,"chemical-use 0% portion (450 kt) not modelled",+0.40,
+020230,8,"02023090 AR 92%, BR 8%","12.8% + 304.1 EUR/100kg; Hilton/processing quotas 20% in-quota","3.45 EUR/kg AR, 7.7 BR",97.3 (MFN),56.9,20 (in-quota base),BF2,"slice uses t cwe as product t (x1.3)",-3.01,
+020130,9,"02013000 AR 100%","12.8% + 303.4 EUR/100kg; Hilton 20% in-quota, duty-free at EIF (Annex 2-A Sec B para 2)","8.09 EUR/kg",50.3 (MFN),49.97,20 (Hilton) -> 0 at EIF,BF1 + Hilton,"Hilton elimination not modelled; slice cwe x1.3",-0.36 (Y5: large),
+200919,10,"20091998 BR 100%","12.2%","3.55 EUR/kg",12.2,28.72,12.2,7,"avg r10 0.25 vs 0",-1.60,
+030474,11,"03047415 AR 100% (Merluccius hubbsi)","7.5%; ATQ 09.2774 0% for processing (reported)","3.49 EUR/kg",7.5 (0 if ATQ),7.15,7.5 (upper bound),0,"avg r0 0.60 vs 0",+0.13,
+640220,12,"64022000 BR 100%","17%","10.79 EUR/kg",17.0,17.0,17.0,10,none,0,
+170199,13,"17019910 BR 99%","41.9 EUR/100kg","0.64 EUR/kg",65,60.12,65,E,none,0,"excluded: no effect"
+441239,14,"44123900 BR 100%","7%","0.83 EUR/kg",7.0,7.0,7.0,7,none,0,
+080830,15,"08083090 AR 100%","seasonal: Jan 8, Feb-Mar 5, Apr 0, May-Jun 2.5, Jul 1-15 0, Jul 16-31 5, Aug-Dec 10.4 (entry price)","1.12 EUR/kg",1.86 (Comext monthly weights),7.2,1.86,0/EP,"avg r0 0.455 vs 0",-0.09,
+200969,extra,"20096919 AR 100%","40% (entry price 212.4 EUR/hl; UV ~228 EUR/hl)","1.70 EUR/kg",40,77.71,40,10/EP,none,-1.58,
+200911,extra,"20091199 BR 100%","15.2%","2.38 EUR/kg",15.2,34.61,15.2,10,"avg r10 0.25 vs 0",-0.50,
+230990,extra,"23099031 BR 95%, 23099096 5%","23 EUR/t; 9.6%","0.97 EUR/kg",2.73,40.0,2.73,10,mixed cats,-1.72,"entire HS 23 import effect"
+020714,extra,"02071410 BR 100%","102.4 EUR/100kg","2.70 EUR/kg",37.9,17.86,37.9,PY1,none,+0.87,
