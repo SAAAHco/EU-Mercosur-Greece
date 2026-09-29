@@ -1,9 +1,10 @@
 cff-version: 1.2.0
-message: "If you use this code or data, please cite the article below."
-title: "Protest without Exposure: Replication Package for the Line-Level Incidence of the EU-Mercosur Agreement on Greece"
-version: "2.0.0"
+message: "If you use this code or data, please cite it as below."
+title: "Replication package: line-level incidence of the EU-Mercosur Interim Trade Agreement on Greece"
+version: "2.0.1"
 date-released: "2026-09-29"
 license: MIT
+repository-code: "https://github.com/SAAAHco/EU-Mercosur-Greece"
 authors:
   - family-names: Pappas
     given-names: Konstantinos
@@ -13,16 +14,3 @@ authors:
     orcid: "https://orcid.org/0000-0002-3628-9622"
   - family-names: Albatayneh
     given-names: Rashed
-preferred-citation:
-  type: article
-  title: "Protest without Exposure: Why Greece Backed the EU-Mercosur Agreement"
-  journal: "JCMS: Journal of Common Market Studies"
-  year: 2026
-  notes: "Submitted"
-  authors:
-    - family-names: Pappas
-      given-names: Konstantinos
-    - family-names: Ashkanani
-      given-names: Zainab
-    - family-names: Albatayneh
-      given-names: Rashed

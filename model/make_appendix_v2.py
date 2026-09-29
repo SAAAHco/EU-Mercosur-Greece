@@ -1,5 +1,6 @@
 """Generate the Online Appendix markup (tables from the v8.1 results) and supplementary figures."""
 import json, os, sys, collections, csv
+import re
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -57,11 +58,11 @@ w("")
 # ---------------- Appendix B ----------------
 w("# Appendix B. Tariff treatment of traded lines")
 w("")
-w("Base tariffs on the EU side are applied most-favored-nation duties, expressed as ad valorem equivalents. For all lines the World Bank's TRAINS ad valorem equivalents for 2023 are the default (World Bank, 2026). For the twenty lines that carry the result, the eight-digit line actually traded by Greece was identified from Eurostat Comext data for 2022 to 2024, its conventional duty was read from TARIC, and compound or specific duties were valued at Greek import unit values (Table A.2). Where the TRAINS average mixes eight-digit lines that do not apply to Mercosur trade, such as juice rows valid only below a value threshold or wine rows reserved to wine produced in the Union, the traded-row value replaces it.")
+w("Base tariffs on the EU side are applied most-favored-nation (MFN) duties, expressed as ad valorem equivalents. For all lines the 2023 ad valorem equivalents of the World Bank's Trade Analysis Information System (TRAINS) are the default (World Bank, 2026). For the 21 lines that carry the result, the eight-digit line of the Combined Nomenclature (CN) actually traded by Greece was identified from Eurostat Comext data for 2022 to 2024 (Eurostat, 2026a), its conventional duty was read from the EU's integrated tariff (TARIC, 2026), and compound or specific duties were valued at Greek import unit values (Table A.2). Where the TRAINS average mixes eight-digit lines that do not apply to Mercosur trade, such as juice rows valid only below a value threshold or wine rows reserved to wine produced in the Union, the traded-row value replaces it.")
 w("")
 w("Phase-outs are read from the schedules annexed to the Interim Agreement on Trade (European Union, 2026). Under Annex 2-A, the linear categories 4, 7, 8, 10 and 15 eliminate the base duty in equal annual cuts, the first at entry into force, so that the duty is zero from the first of January of the year the category names; category 0 eliminates the duty at entry into force; category E excludes the line; and the tariff-rate-quota categories open in-quota access at the rates and volumes of Section B (EU) and Section C (Mercosur). Table A.3 summarizes the categories that occur in Greek trade. Year 0 runs from 1 May to 31 December 2026, so the year-0 cut is applied to eight twelfths of the year. Where the schedule lists several eight-digit rows under a traded six-digit line with different categories, their paths are averaged with weights equal to their ad valorem base rates.")
 w("")
-w("On the Mercosur side, the base rate is the partner-specific rate in Appendix 2-A-2, or the partner's applied MFN rate where it is lower, as Article 2.4(7) provides. Staging categories are common to the four parties. Exports to Bolivia receive no preference.")
+w("On the Mercosur side, whose schedule uses the Mercosur Common Nomenclature (NCM), the base rate is the partner-specific rate in Appendix 2-A-2, or the partner's applied MFN rate where it is lower, as Article 2.4(7) provides. Staging categories are common to the four parties. Exports to Bolivia receive no preference.")
 w("")
 tc = list(csv.DictReader(open(os.path.join(HERE, 'inputs', 'tariff_check_lines.csv'), encoding='utf-8')))
 w("@caption **Table A.2.** Tariff treatment of the traded lines that carry the result (EU imports from Mercosur).")
@@ -71,7 +72,7 @@ w("@table")
 w("HS-6 | Traded eight-digit line and duty | Base used (%) | Category | Note")
 NOTES = {'240120': 'certified Virginia/Burley; 9.12% uncertified (sensitivity)', '030617': 'upper bound; 0% processing quotas exist',
          '030743': 'upper bound; 0% processing quotas exist', '030474': 'upper bound; 0% processing quotas exist',
-         '020230': 'in-quota base; new quota at 7.5%', '020130': 'Hilton base; removal treated as rent (price cut in sensitivity)',
+         '020230': 'in-quota base; new quota at 7.5%', '020130': 'Hilton base; removal treated as rent (Greek Hilton slice at 0% in sensitivity, Table A.7)',
          '220720': 'specific duty at Greek prices; all-uses quota at one third', '170199': 'excluded from preferences',
          '080550': 'lemon rate (WITS applies the lime rate)', '200919': 'traded row; value-threshold rows dropped', '200911': 'traded row',
          '200969': 'ad valorem part; entry price not triggered', '230990': 'specific duty at Greek prices', '080830': 'seasonal duty, monthly weights',
@@ -80,9 +81,13 @@ for r in tc:
     h6 = r['hs6']
     base = r['recommended_tau0_pct'].split(' ')[0]
     cat = r['staging_of_traded_CN8'].replace('EL TRQ', 'EL (quota)').replace('BF1 + Hilton', 'BF1 (quota)')
-    w(f"{h6} | {r['traded_CN8_share_2022_24'][:60]}; {r['conventional_duty_TARIC'][:70]} | {base} | {cat} | {NOTES.get(h6, '')}")
+    cell = f"{r['traded_CN8_share_2022_24']}; {r['conventional_duty_TARIC']}".replace('authorised', 'authorized')
+    cell = re.sub(r'\b(BR|AR|UY|PY)\b', lambda m: {'BR': 'BRA', 'AR': 'ARG', 'UY': 'URY', 'PY': 'PRY'}[m.group(1)], cell)
+    w(f"{h6} | {cell} | {base} | {cat} | {NOTES.get(h6, '')}")
+w("030366 | 03036612 ARG, URY (Argentine hake, frozen whole); 15% | 15.0 | 0 | upper bound; 0% processing quotas exist")
+w("020629 | 02062999 ARG (frozen bovine offal, other); Free | 0.0 | 0 | traded row duty-free")
 w("@endtable")
-w("@note Duties from TARIC valued at Greek unit values for 2022 to 2024. Source: authors' calculations from Eurostat Comext and TARIC; European Union (2026).")
+w("@note Duties valued at Greek unit values for 2022 to 2024. ATQ: autonomous tariff quota; EIF: entry into force; SIV: standard import value; UV: unit value; MIN and MAX: minimum and maximum specific duty. Source: authors' calculations from Eurostat (2026a) and TARIC (2026); European Union (2026).")
 w("")
 w("@caption **Table A.3.** Staging categories occurring in Greek-Mercosur trade (Annex 2-A, Section A).")
 w("@widths 14,86")
@@ -90,9 +95,9 @@ w("@align l,l")
 w("@table")
 w("Category | Treatment")
 for cat, t in [('0', 'Duty eliminated at entry into force'), ('4, 7, 8, 10, 15', 'Base duty eliminated in 5, 8, 9, 11 or 16 equal annual cuts, the first at entry into force; duty-free from 1 January of year 4, 7, 8, 10 or 15'),
-               ('50 %', 'Base duty reduced by half over five equal cuts'), ('7/EP, 10/EP, 0/EP', 'Ad valorem component eliminated as for 7, 10 or 0; entry-price specific duty retained'),
-               ('E', 'Excluded: base rate maintained'), ('BF1, BF2, PY1, PY2, ME, RE, EL, HY, CE, MP', 'EU tariff-rate quotas (beef, poultry, maize and sorghum, rice, ethanol, honey, cheese, milk powder): in-quota rate for quota volumes; base rate out of quota'),
-               ('TRQ-1 to TRQ-4', 'Mercosur tariff-rate quotas for EU dairy and garlic: preference rising from 10% (30% for garlic) to 100%')]:
+               ('50 %', 'Base duty reduced by half over five equal cuts'), ('10/EP, 0/EP', 'Ad valorem component eliminated as for 10 or 0; entry-price specific duty retained'), ('SW/12', 'Sparkling wine: duty-free at entry into force if the customs value is at least 8 US dollars per liter; otherwise the base rate for 12 years'), ('10/OS ≥ 70 %', 'Products with less than 70% sugar eliminated in 11 equal annual cuts; products with 70% sugar or more enter only under the other-sugars quota'),
+               ('E', 'Excluded: base rate maintained'), ('BF1, BF2, PY1, PY2, PK, ME, RE, SR, EL, HY, RM, SC, SH2', 'EU tariff-rate quotas (beef, poultry, pigmeat, maize and sorghum, rice, sugar for refining, ethanol, honey, rum, sweetcorn, starch derivatives): in-quota rate for quota volumes; base rate out of quota'),
+               ('TRQ-1 to TRQ-4', 'Mercosur tariff-rate quotas for EU dairy and garlic: preference rising from 10% (30% for garlic) to 100%'), ('CH2', 'Mercosur tariff-rate quotas for EU chocolate and white chocolate: in-quota duty reduced in stages, duty-free from year 14')]:
     w(f"{cat} | {t}")
 w("@endtable")
 w("@note Source: European Union (2026), Annex 2-A.")
@@ -104,7 +109,7 @@ w("For chapter *c* in projection year *y*, imports are projected as")
 w("")
 w("@eq *M*(*c*, *y*) = *M*^{cf}(*c*, *y*) × [1 + *ε*_{i} × *π*(*c*, *y*) × *W*(*c*, *y*)] ||| (C.1)")
 w("")
-w("where *M*^{cf} is the counterfactual, *ε*_{i} = −3.5 the Armington import elasticity (Armington, 1969; Hertel et al., 2007), and *π*(*c*, *y*) the chapter's proportional change in the tariff-inclusive price, computed as the baseline-share-weighted sum of line-level changes, *π*(*c*, *y*) = Σ_{l} *s*_{l} [(1 + *τ*_{l}(*y*))/(1 + *τ*_{l0}) − 1]. Lines that are duty-free at base therefore contribute zero. *W* is the compliance-cost multiplier retained from earlier versions of the model: exporter-borne wedges of −1.0 percentage points for products covered by the EU Deforestation Regulation, −0.5 to −3.0 points for products covered by the Carbon Border Adjustment Mechanism, and −1.0 point for import-standards compliance on perishables, calibrated as in earlier versions (Rijk and Kuepper, 2025; Bonnet et al., 2026). Because the wedge multiplies the tariff response, it has no effect on lines without a tariff cut, and across the whole projection it moves the Year 10 result by less than 1.5 million dollars. Exports are projected analogously on the Mercosur schedules with *ε*_{x} = −2.5 and no wedge, and agricultural exports carry a capacity adjustment for Farm to Fork compliance and seasonal labor (10% and 7% at Year 10, weighted by agricultural content), which reduces Year 10 exports by 3.3 million dollars.")
+w("where *M*^{cf} is the counterfactual, *ε*_{i} = −3.5 the Armington import elasticity (Armington, 1969; Hertel et al., 2007), and *π*(*c*, *y*) the chapter's proportional change in the tariff-inclusive price, computed as the baseline-share-weighted sum of line-level changes, *π*(*c*, *y*) = Σ_{l} *s*_{l} [(1 + *τ*_{l}(*y*))/(1 + *τ*_{l0}) − 1]. Lines that are duty-free at base therefore contribute zero. *W* is the compliance-cost multiplier: exporter-borne wedges of −1.0 percentage points for products covered by the EU Deforestation Regulation, −0.5 to −3.0 points for products covered by the Carbon Border Adjustment Mechanism, and −1.0 point for import-standards compliance on perishables, calibrated on Rijk and Kuepper (2025) and Bonnet et al. (2026). Because the wedge multiplies the tariff response, it has no effect on lines without a tariff cut, and across the whole projection it moves the Year 10 result by less than 1.5 million dollars. Exports are projected analogously on the Mercosur schedules with *ε*_{x} = −2.5 and no wedge, and agricultural exports carry a capacity adjustment for Farm to Fork compliance and seasonal labor (10% and 7% at Year 10, weighted by agricultural content), which reduces Year 10 exports by 3.3 million dollars.")
 w("")
 w("Tariff-rate quotas are treated at the margin. Greece is assigned a notional slice of each EU quota equal to its 2.4% population share, converted from carcass weight where the quota is so defined (130% for boneless beef, 140% for boneless poultry), pooled across the lines the quota covers, valued at Greek import unit values and pro-rated for 2026. If projected counterfactual imports of a line exceed its slice, the marginal unit pays the out-of-quota duty and the line shows no quantity response; below the slice, the in-quota price change applies, capped so that projected imports do not exceed the slice. Table A.4 reports the slices for the quota lines Greece trades. The existing Hilton beef quotas, whose 20% in-quota duty the agreement removes at entry into force, are treated as a transfer of quota rent in the central case, since those quotas are filled at Union level; a sensitivity gives Greece a notional 2.4% slice of the Hilton volumes at 0%, filled before the new beef quotas. Where a line carries two quotas, the cheaper fills first.")
 w("")
@@ -115,16 +120,16 @@ w("@align l,l,l,r,r,l")
 w("@table")
 w("Quota | HS-6 | Product | Slice, Year 5 | Counterfactual imports, Year 5 | Status at Year 10")
 PROD = {'020130': 'Fresh boneless beef', '020230': 'Frozen boneless beef', '020714': 'Frozen boneless chicken', '100590': 'Maize', '100630': 'Rice',
-        '220720': 'Denatured ethanol', '220710': 'Undenatured ethanol', '040900': 'Honey', '100620': 'Husked rice', '170114': 'Raw cane sugar for refining'}
+        '220720': 'Denatured ethanol', '220710': 'Undenatured ethanol', '040900': 'Natural honey', '160249': 'Pigmeat preparations', '100620': 'Husked rice', '170114': 'Raw cane sugar for refining'}
 for c in cfg['chapters']:
     for l in c['eu_lines']:
-        if 'trq' in l and l['share'] * c['baseline_imp'] > 2e4:
+        if 'trq' in l:
             s5 = l['trq']['slice'][5]; m5 = cfy(c, l['share'], 5); m10 = cfy(c, l['share'], 10); s10 = l['trq']['slice'][10]
             w(f"{l['trq']['code']} | {l['hs6']} | {PROD.get(l['hs6'], l['hs6'])} | {s5/1e6:.2f} | {m5/1e6:.2f} | {'binding' if m10 >= s10 else 'not binding'}")
 w("@endtable")
 w("@note Slices are 2.4% of the EU quota volume in product weight, valued at Greek import unit values and pooled across the lines covered. Source: authors' calculations; European Union (2026), Annex 2-A, Section B.")
 w("")
-w("The robustness exercises retained from the earlier model perturb only the wedge multiplier and the capacity drags. A deterministic grid over four wedge multipliers and three Farm-to-Fork drags spans " + f2(max(res['grid'].values()) - min(res['grid'].values())) + " million dollars at Year 10, and a 1,000-draw Monte Carlo simulation with triangular priors gives a mean of " + f2(res['mc']['y10']['wid']['mean']) + " million with a 95% interval of " + f2(res['mc']['y10']['wid']['lo']) + " to " + f2(res['mc']['y10']['wid']['hi']) + " million. These intervals exclude the dominant uncertainties, which are the elasticities, the counterfactual growth rule and the customs regime of particular lines; those are reported as sensitivities in Table A.7.")
+w("The robustness exercises reported here perturb only the wedge multiplier and the capacity drags. A deterministic grid over four wedge multipliers and three Farm to Fork drags spans " + f2(max(res['grid'].values()) - min(res['grid'].values())) + " million dollars at Year 10, and a 1,000-draw Monte Carlo simulation with triangular priors gives a mean of " + f2(res['mc']['y10']['wid']['mean']) + " million with a 95% interval of " + f2(res['mc']['y10']['wid']['lo']) + " to " + f2(res['mc']['y10']['wid']['hi']) + " million. These intervals exclude the dominant uncertainties, which are the elasticities, the counterfactual growth rule and the customs regime of particular lines; those are reported as sensitivities in Table A.7.")
 w("")
 # ---------------- Appendix D ----------------
 w("# Appendix D. Detailed results and sensitivities")
@@ -179,9 +184,9 @@ h75 = pe_v8.headline(v5, pe_v8.CAP_WEIGHTS_V75, pe_v8.TRQ_CAPS_V75)
 n75 = {c['hs']: c['net'] for c in h75['chapters']}
 w("# Appendix E. Comparison with a chapter-average specification")
 w("")
-w(f"An earlier version of this projection assigned each of 25 chapters a single EU tariff and phase-out equal to the simple average over the chapter's tariff lines, together with a single Mercosur tariff and phase-out. Run through the same engine, that specification gives a Year 10 widening of {f1(h75['widening'])} million US dollars, with {f1(h75['add_imp'])} million of additional imports and {f1(h75['add_exp_adj'])} million of adjusted exports. Animal feed contributes {f1(n75['23'])} million and coffee {f1(n75['09'])} million, together {100*(n75['23']+n75['09'])/h75['widening']:.0f}% of the total. The engine used in this article reproduces those figures exactly when given the chapter-average inputs, so the difference between the two results is due entirely to the inputs.")
+w(f"A chapter-average specification assigns each of 25 chapters a single EU tariff and phase-out equal to the simple average over the chapter's tariff lines, together with a single Mercosur tariff and phase-out. It gives a Year 10 widening of {f1(h75['widening'])} million US dollars, with {f1(h75['add_imp'])} million of additional imports and {f1(h75['add_exp_adj'])} million of adjusted exports. Animal feed contributes {f1(n75['23'])} million, beverages {f1(n75['22'])} million and coffee {f1(n75['09'])} million; the beverages figure arises because Brazilian ethanol, which the agreement liberalizes only within a quota, is assigned the chapter's 14% duty on a ten-year phase-out. Both specifications run through the same engine, so the difference between the two results is due entirely to the inputs.")
 w("")
-w("Three features of the chapter-average inputs produce the difference. First, duty-free lines received the chapter's average duty: Greek feed imports from Mercosur are soybean oilcake (CN 2304) and Greek coffee imports green coffee (CN 0901 11), both duty-free at MFN and listed with a base of 'Free' in the EU schedule, yet they were assigned 5.0% and 3.0%. Second, the 25-chapter set omitted nineteen chapters that meet the stated inclusion rule, including meat, fish, cereals and sugar, and set tobacco imports to zero. Third, phase-outs were assigned by chapter: Greek olive oil exports, for example, were treated as liberalized over six years, whereas Mercosur's schedule phases out the duty on olive oil over fifteen. Figure 1 of the article compares the chapter results of the two specifications.")
+w("Three features of the chapter-average inputs produce the difference. First, duty-free lines receive the chapter's average duty: Greek feed imports from Mercosur are soybean oilcake (CN 2304) and Greek coffee imports green coffee (CN 0901 11), both duty-free at MFN and listed with a base of 'Free' in the EU schedule, yet they are assigned 5.0% and 3.0%. Trade weighting would remove most of this first error, since soybean oilcake and green coffee dominate their chapters; the second and third are properties of aggregation as such. Second, the 25-chapter set omits nineteen chapters that meet the inclusion rule used here, including meat, fish, cereals and sugar, and records no tobacco imports. Third, phase-outs are assigned by chapter: Greek olive oil exports, for example, are treated as liberalized over six years, whereas Mercosur's schedule phases out the duty on olive oil over fifteen. Figure 1 of the article compares the chapter results of the two specifications.")
 w("")
 # ---------------- Appendix F ----------------
 w("# Appendix F. Greek protected designations and the projected balance")
@@ -196,10 +201,10 @@ GIS = [('22', 'Amyntaio, Mantineia, Naoussa, Nemea, Retsina of Attiki, Samos, Sa
        ('04', 'Feta, Kefalograviera, Manouri', 3), ('20', 'Elia Kalamatas, Konservolia Amfissis (table olives)', 2),
        ('08', 'Korinthiaki Stafida Vostitsa (currant)', 1), ('09', 'Krokos Kozanis (saffron)', 1), ('13', 'Masticha Chiou (mastic)', 1)]
 for hs, names, n in GIS:
-    net = f2(NET[hs]['net']) if hs in NET else 'not modelled'
+    net = f2(NET[hs]['net']) if hs in NET else 'not modeled'
     w(f"{hs} | {names} | {n} | {net}")
 w("@endtable")
-w("@note Chapter 13 falls below the inclusion threshold. Greek table olives (NCM 2005.70) are excluded from Mercosur's tariff preferences. Source: agreement annex on geographical indications as reported in Ekathimerini (2026a); authors' calculations.")
+w("@note Chapter 13 falls below the inclusion threshold. Greek table olives (NCM 2005.70) are excluded from Mercosur's tariff preferences. Source: agreement annex on geographical indications as reported in iefimerida (2026b); authors' calculations.")
 w("")
 open(OUTTXT, 'w', encoding='utf-8').write('\n'.join(L) + '\n')
 

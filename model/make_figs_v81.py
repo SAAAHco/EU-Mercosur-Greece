@@ -52,11 +52,11 @@ ax.legend(frameon=False, loc='lower right', fontsize=8)
 for i, k in enumerate(keys):
     for off, v in ((0.2, net75.get(k, 0)), (-0.2, net81.get(k, 0))):
         if abs(v) >= 5:
-            ax.text(v + (1.5 if v > 0 else -1.5), i + off, f"{v:.1f}", va='center', ha='left' if v > 0 else 'right', fontsize=7, color=INK)
+            ax.text(v + (1.5 if v > 0 else -1.5), i + off, f"{v:.1f}".replace('-', '−'), va='center', ha='left' if v > 0 else 'right', fontsize=7, color=INK)
 ax.set_xlim(-32, max(net75.values()) + 18)
 save(fig, 'Figure_1')
 
-# ---------- Figure 2: where the corrected adjustment falls ----------
+# ---------- Figure 3: where the corrected adjustment falls ----------
 GI = R.GI
 sel = [k for k, v in net81.items() if abs(v) >= 0.2 or k in GI]
 sel = sorted(sel, key=lambda k: net81[k])
@@ -70,32 +70,32 @@ ax.xaxis.grid(True, color=GRID, lw=0.6)
 ax.set_axisbelow(True)
 for i, v in enumerate(vals):
     if abs(v) >= 1:
-        ax.text(v + (0.6 if v > 0 else -0.6), i, f"{v:.1f}", va='center', ha='left' if v > 0 else 'right', fontsize=7, color=INK)
+        ax.text(v + (0.6 if v > 0 else -0.6), i, f"{v:.1f}".replace('-', '−'), va='center', ha='left' if v > 0 else 'right', fontsize=7, color=INK)
 ax.set_xlim(min(vals) - 6, max(vals) + 5)
 ax.set_xlabel('Year 10 widening of the bilateral balance, million US dollars')
 ax.text(0.99, 0.02, 'red: additional imports exceed additional exports\nblue: additional exports exceed additional imports',
         transform=ax.transAxes, ha='right', va='bottom', fontsize=7, color=INK2)
-save(fig, 'Figure_2')
+save(fig, 'Figure_3')
 
-# ---------- Figure 3: sensitivity of the Year 10 result ----------
+# ---------- Figure 2: sensitivity of the Year 10 result ----------
 res = json.load(open('results_v81.json'))
 central = res['central']['widening'] / 1e6
 sens = dict(res['sensitivities'])
-order = [('elasticity -2.0', 'Import elasticity -2.0'), ('elasticity -2.5', 'Import elasticity -2.5'),
-         ('elasticity -5.0', 'Import elasticity -5.0'), ('elasticity -8.0', 'Import elasticity -8.0'),
-         ('no baseline growth (static)', 'No baseline growth'), ('growth capped at +/-5%', 'Growth capped at 5% a year'),
-         ('growth capped at +/-10%', 'Growth capped at 10% a year'), ('growth on 3-year averages', 'Growth on three-year averages'),
+order = [('elasticity -2.0', 'Import elasticity −2.0'), ('elasticity -2.5', 'Import elasticity −2.5'),
+         ('elasticity -5.0', 'Import elasticity −5.0'), ('elasticity -8.0', 'Import elasticity −8.0'),
+         ('no baseline growth (static)', 'No counterfactual growth'), ('growth capped at +/-5%', 'Growth bounded at ±5% a year'),
+         ('growth capped at +/-10%', 'Growth bounded at ±10% a year'), ('growth on 3-year averages', 'Growth on three-year averages'),
          ('spike screen off (one-offs and spikes kept)', 'Spike screen off'),
-         ('fish processing quotas: base 0%', 'Fish enters under 0% processing quotas'),
-         ('tobacco WITS AVE (5.97%)', 'Tobacco duty 5.97% (WITS average)'), ('tobacco uncertified (9.12%)', 'Tobacco duty 9.12% (uncertified leaf)'),
-         ('beef Hilton quota duty removal (with Greek slice)', 'Hilton beef quota at 0% (Greek slice)'), ('spike screen also drops 2024-only flows', 'New 2024 flows dropped as one-offs')]
+         ('fish processing quotas: base 0%', 'Seafood entering under 0% processing quotas'),
+         ('tobacco WITS AVE (5.97%)', 'Tobacco leaf at the TRAINS average (5.97%)'), ('tobacco uncertified (9.12%)', 'Tobacco leaf at the uncertified duty (9.12%)'),
+         ('beef Hilton quota duty removal (with Greek slice)', 'Hilton quota duty removed, with a Greek slice'), ('spike screen also drops 2024-only flows', 'Spike screen also drops flows first seen in 2024')]
 order = sorted(order, key=lambda t: sens[t[0]])
 fig, ax = plt.subplots(figsize=(6.6, 4.2))
 for i, (k, lab) in enumerate(order):
     v = sens[k] / 1e6
     ax.plot([central, v], [i, i], color=GRAY, lw=1.5)
     ax.plot(v, i, 'o', ms=6, color=RED if v > 0 else BLUE, mec='white', mew=1.2)
-    ax.text(v + (2 if v >= central else -2), i, f"{v:.1f}", va='center', ha='left' if v >= central else 'right', fontsize=7, color=INK)
+    ax.text(v + (2 if v >= central else -2), i, f"{v:.1f}".replace('-', '−'), va='center', ha='left' if v >= central else 'right', fontsize=7, color=INK)
 ax.axvline(central, color=INK, lw=1.0)
 ax.axvline(0, color=INK2, lw=0.8, ls=':')
 ax.text(central + 1.5, len(order) - 0.45, f'central case {central:.1f}', ha='left', va='bottom', fontsize=7.5, color=INK)
@@ -106,5 +106,5 @@ ax.set_axisbelow(True)
 ax.set_xlabel('Year 10 widening of the bilateral balance, million US dollars')
 ax.set_ylim(-0.7, len(order) + 0.3)
 ax.set_xlim(min(sens[k] for k, _ in order) / 1e6 - 12, max(sens[k] for k, _ in order) / 1e6 + 12)
-save(fig, 'Figure_3')
+save(fig, 'Figure_2')
 print('figures written to', OUT, '| central', round(central, 2))

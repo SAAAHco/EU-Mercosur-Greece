@@ -1,12 +1,14 @@
-# Replication package, version 2.0.0
+# Replication package, version 2.0.1
 
-**Article:** *Protest without Exposure: Why Greece Backed the EU-Mercosur Agreement* (submitted to *JCMS: Journal of Common Market Studies*).
+**Subject:** line-level incidence of the EU-Mercosur Interim Trade Agreement on Greek trade with Mercosur. The accompanying article is under review.
 
 **Authors:** Konstantinos Pappas, Zainab Ashkanani and Rashed Albatayneh (Texas A&M University).
 
 **License:** MIT.
 
-This package reproduces every number, table and figure in the article and its Online Appendix. It replaces version 1.0.0, which implemented a chapter-average tariff specification. That specification applied average chapter duties to lines that enter the EU duty-free, and it projected a Year 10 widening of 146.0 million US dollars. Online Appendix E of the article documents the difference, and `pe_v8.py` reproduces the version 1.0.0 result exactly from `inputs/v5_config.json`.
+This package reproduces every number, table and figure in the accompanying article and its online appendix. It replaces version 1.0.0, which implemented a chapter-average tariff specification that applied average chapter duties to lines entering the EU duty-free. `pe_v8.py` reproduces the version 1.0.0 result exactly from `inputs/v5_config.json`, for comparison.
+
+**Version history.** 2.0.0 introduced the line-level specification. 2.0.1 completes the appendix tables (all 21 traded-row overrides, all quota lines, full staging categories) and orders the figures as in the article; the results are unchanged.
 
 ## What the model does
 
@@ -28,7 +30,7 @@ Chapter price changes are baseline-weighted sums of the line-level changes. Impo
 | `model/pe_v81.py` | Projection engine with marginal quota logic |
 | `model/pe_v8.py` | The earlier engine, used for the chapter-average comparison |
 | `model/run_v81.py` | Central case, year profile, sensitivities, grid and Monte Carlo; writes `results_v81.json` and `v81_config.json` |
-| `model/make_figs_v81.py` | Figures 1 to 3 of the article |
+| `model/make_figs_v81.py` | Figures 1 to 3 of the article (1: chapter-average versus line-level; 2: sensitivity; 3: composition) |
 | `model/make_appendix_v2.py` | Online Appendix Tables A.1 to A.8 (markup) and Figures S1 to S4 |
 | `model/inputs/comtrade_hs6/` | UN Comtrade HS-6 records, Greece with each partner, 2022 to 2024, imports (M) and exports (X) |
 | `model/inputs/Greece__Mar_Total_TradeData_Balance_Sheet.xlsx` | UN Comtrade HS-2 panel, 2014 to 2024 |
