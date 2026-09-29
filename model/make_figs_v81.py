@@ -78,7 +78,7 @@ ax.text(0.99, 0.02, 'red: additional imports exceed additional exports\nblue: ad
 save(fig, 'Figure_3')
 
 # ---------- Figure 2: sensitivity of the Year 10 result ----------
-res = json.load(open('results_v81.json'))
+res = json.load(open('results_v81.json' if os.path.exists('results_v81.json') else os.path.join(HERE, '..', 'outputs', 'results_v81.json')))
 central = res['central']['widening'] / 1e6
 sens = dict(res['sensitivities'])
 order = [('elasticity -2.0', 'Import elasticity −2.0'), ('elasticity -2.5', 'Import elasticity −2.5'),

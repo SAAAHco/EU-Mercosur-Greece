@@ -18,7 +18,7 @@ plt.rcParams.update({'font.family': 'DejaVu Sans', 'font.size': 9, 'axes.spines.
                      'axes.edgecolor': INK2, 'xtick.color': INK2, 'ytick.color': INK2})
 
 h, cfg, chs = R.run()
-res = json.load(open('results_v81.json'))
+res = json.load(open('results_v81.json' if os.path.exists('results_v81.json') else os.path.join(HERE, '..', 'outputs', 'results_v81.json')))
 C = {c['hs']: c for c in cfg['chapters']}
 NET = {c['hs']: c for c in h['chapters']}
 f1 = lambda x: f"{x/1e6:.1f}".replace('-', '−')
