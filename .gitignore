@@ -2,6 +2,7 @@
 model/results_v81.json
 model/v81_config.json
 model/appendix_tables.txt
+verification/comext_raw/
 
 # Python / OS
 __pycache__/

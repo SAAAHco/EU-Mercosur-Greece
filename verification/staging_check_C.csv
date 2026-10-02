@@ -1,0 +1,46 @@
+cn8,hs,partner,baseline_musd,tau0_model,tau_src,staging,trq,model_year0_rate,taric_third_country,taric_mercosur_pref,taric_pref_ave,match
+23040000,23,AR,241.46,0.0,TARIC CN8,0,,0.0,,[],,
+09011100,09,BR,103.17,0.0,TARIC CN8,0,,0.0,0 %,[],,
+12019000,12,BR,73.82,0.0,TARIC CN8,0,,0.0,,[],,
+24012085,24,BR,45.37,0.0399,TARIC CN8 (certified leaf sub-line 10),4,,0.0319,11.20 % MIN 22.00 EUR / 100 kg MAX 56.00 EUR / 100 kg,"['8.90 % MIN 17.60 EUR / 100 kg MAX 19.20 EUR / 100 kg', '8.90 % MIN 17.60 EUR / 100 kg MAX 44.80 EUR / 100 kg']",0.0319,OK
+26060000,26,BR,36.45,0.0,TARIC CN8,0,,0.0,0 %,[],,
+47032900,47,BR,35.14,0.0,TARIC CN8,0,,0.0,0 %,[],,
+12024200,12,AR,21.67,0.0,TARIC CN8,0,,0.0,,[],,
+08055010,08,AR,9.27,0.064,TARIC CN8 (mean of 10-digit sub-lines),7,,0.056,,"['5.60 %', '5.60 %']",0.056,OK
+03061799,03,AR,6.57,0.12,TARIC CN8 (mean of 10-digit sub-lines),4,,0.096,12.00 %,"['9.60 %', '9.60 %']",0.096,OK
+38061000,38,BR,4.91,0.05,TARIC CN8 (mean of 10-digit sub-lines),4,,0.04,5.00 %,"['4.00 %', '4.00 %']",0.04,OK
+23040000,23,AR,4.72,0.0,TARIC CN8,0,,0.0,,[],,
+22072000,22,BR,4.48,0.1612,TARIC CN8 (mean of 10-digit sub-lines),EL,EL,0.1612,10.20 EUR / hl,"['3.40 EUR / hl', '0 %', '3.40 EUR / hl']",,
+02023090,02,AR,3.62,0.973,TARIC CN8 (mean of 10-digit sub-lines),BF2,BF2,0.973,12.80 % + 304.10 EUR / 100 kg,"['7.50 %', '7.50 %', '7.50 %']",,
+02013000,02,AR,3.03,0.5032,TARIC CN8 (mean of 10-digit sub-lines),BF1,BF1,0.5032,12.80 % + 303.40 EUR / 100 kg,"['7.50 %', '7.50 %', '7.50 %']",,
+20091998,20,BR,2.39,0.122,TARIC CN8 (mean of 10-digit sub-lines),7,,0.1067,12.20 %,"['10.60 %', '10.60 %', '10.60 %']",0.106,OK
+24012035,24,BR,2.35,0.0461,TARIC CN8 (certified leaf sub-line 10),4,,0.0368,11.20 % MIN 22.00 EUR / 100 kg MAX 56.00 EUR / 100 kg,"['8.90 % MIN 17.60 EUR / 100 kg MAX 19.20 EUR / 100 kg', '8.90 % MIN 17.60 EUR / 100 kg MAX 19.20 EUR / 100 kg', '8.90 % MIN 17.60 EUR / 100 kg MAX 44.80 EUR / 100 kg']",0.0368,OK
+84292000,84,BR,2.3,0.0,TARIC CN8,0,,0.0,0 %,[],,
+84295199,84,BR,2.0,0.0,TARIC CN8,0,,0.0,0 %,[],,
+03047415,03,AR,2.0,0.075,TARIC CN8 (mean of 10-digit sub-lines),0,,0.0,7.50 %,"['0 %', '0 %']",0.0,OK
+24012035,24,BR,1.9,0.0461,TARIC CN8 (certified leaf sub-line 10),4,,0.0368,11.20 % MIN 22.00 EUR / 100 kg MAX 56.00 EUR / 100 kg,"['8.90 % MIN 17.60 EUR / 100 kg MAX 19.20 EUR / 100 kg', '8.90 % MIN 17.60 EUR / 100 kg MAX 19.20 EUR / 100 kg', '8.90 % MIN 17.60 EUR / 100 kg MAX 44.80 EUR / 100 kg']",0.0368,OK
+48041190,48,BR,1.74,0.0,TARIC CN8,0,,0.0,0 %,[],,
+64022000,64,BR,1.68,0.17,TARIC CN8,10,,0.1545,17.00 %,['15.40 %'],0.154,OK
+44029000,44,PY,1.64,0.0,TARIC CN8 (mean of 10-digit sub-lines),0,,0.0,0 %,[],,
+23040000,23,AR,1.59,0.0,TARIC CN8,0,,0.0,,[],,
+17019910,17,BR,1.59,0.6581,TARIC CN8,E,,0.6581,41.90 EUR / 100 kg,[],,
+10059000,10,AR,1.55,0.0,TARIC CN8,ME,ME,0.0,,"['0 %', '0 %']",,
+07133390,07,AR,1.43,0.0,TARIC CN8,0,,0.0,0 %,[],,
+44123900,44,BR,1.33,0.07,TARIC CN8 (mean of 10-digit sub-lines),7,,0.0613,7.00 %,"['6.10 %', '6.10 %', '6.10 %']",0.061,OK
+84291100,84,BR,1.27,0.0,TARIC CN8,0,,0.0,0 %,[],,
+03074392,03,AR,1.27,0.08,TARIC CN8 (mean of 10-digit sub-lines),0,,0.0,8.00 %,"['0 %', '0 %', '0 %']",0.0,OK
+12074090,12,PY,1.25,0.0,TARIC CN8,0,,0.0,,[],,
+08083090,08,AR,1.11,0.0,TARIC CN8 (mean of 10-digit sub-lines),0/EP,,0.0,,"['0 %', '0 %']",0.0,OK
+29189990,29,AR,1.04,0.065,TARIC CN8 (mean of 10-digit sub-lines),4,,0.052,6.50 %,"['5.20 %', '5.20 %', '5.20 %']",0.052,OK
+20096919,20,AR,0.92,0.4,TARIC CN8 (mean of 10-digit sub-lines),10/EP,,0.3636,,"['36.30 %', '36.30 %']",0.363,OK
+48025620,48,BR,0.86,0.0,TARIC CN8,0,,0.0,0 %,[],,
+30049000,30,BR,0.82,0.0,TARIC CN8,0,,0.0,0 %,[],,
+76020019,76,BR,0.77,0.0,TARIC CN8,0,,0.0,0 %,[],,
+23099031,23,BR,0.73,0.0236,TARIC CN8 (mean of 10-digit sub-lines),10,,0.0215,,"['20.90 EUR / tonne', '20.90 EUR / tonne', '20.90 EUR / tonne']",0.0215,OK
+20091199,20,BR,0.73,0.152,TARIC CN8 (mean of 10-digit sub-lines),10,,0.1382,15.20 %,"['13.80 %', '13.80 %', '13.80 %']",0.138,OK
+74040099,74,BR,0.64,0.0,TARIC CN8,0,,0.0,0 %,[],,
+24012085,24,BR,0.61,0.0399,TARIC CN8 (certified leaf sub-line 10),4,,0.0319,11.20 % MIN 22.00 EUR / 100 kg MAX 56.00 EUR / 100 kg,"['8.90 % MIN 17.60 EUR / 100 kg MAX 19.20 EUR / 100 kg', '8.90 % MIN 17.60 EUR / 100 kg MAX 44.80 EUR / 100 kg']",0.0319,OK
+12024200,12,AR,0.61,0.0,TARIC CN8,0,,0.0,,[],,
+03036612,03,AR,0.6,0.15,TARIC CN8 (mean of 10-digit sub-lines),0,,0.0,15.00 %,"['0 %', '0 %']",0.0,OK
+12079996,12,PY,0.6,0.0,TARIC CN8 (mean of 10-digit sub-lines),0,,0.0,,[],,
+85015230,85,BR,0.55,0.027,TARIC CN8,0,,0.0,2.70 %,"['0 %', '0 %']",0.0,OK

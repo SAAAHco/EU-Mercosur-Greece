@@ -1,4 +1,4 @@
-# Replication package, version 2.0.1
+# Replication package, version 2.1.0
 
 **Subject:** line-level incidence of the EU-Mercosur Interim Trade Agreement on Greek trade with Mercosur. The accompanying article is under review.
 
@@ -8,7 +8,7 @@
 
 This package reproduces every number, table and figure in the accompanying article and its online appendix. It replaces version 1.0.0, which implemented a chapter-average tariff specification that applied average chapter duties to lines entering the EU duty-free. `pe_v8.py` reproduces the version 1.0.0 result exactly from `inputs/v5_config.json`, for comparison.
 
-**Version history.** 2.0.0 introduced the line-level specification. 2.0.1 completes the appendix tables (all 21 traded-row overrides, all quota lines, full staging categories) and orders the figures as in the article; the results are unchanged.
+**Version history.** 2.0.0 introduced the line-level specification. 2.0.1 completes the appendix tables (all 21 traded-row overrides, all quota lines, full staging categories) and orders the figures as in the article; the results are unchanged. 2.1.0 adds `verification/`, an independent re-estimation of the inputs from Eurostat Comext eight-digit records and TARIC duties with an independently written engine (Year 10 widening 14.85 million US dollars against 16.30 in the central case, same composition); the central results are unchanged.
 
 ## What the model does
 
@@ -41,6 +41,7 @@ Chapter price changes are baseline-weighted sums of the line-level changes. Impo
 | `model/inputs/v5_config.json` | Version 1.0.0 chapter-average inputs, for the comparison in Online Appendix E |
 | `outputs/` | Archived results (`results_v81.json`, `v81_config.json`) and figures (PNG at 300 dpi, EPS) |
 | `provenance/` | Scripts used to retrieve and parse the inputs (Comtrade and WITS pulls, schedule parsing); they keep the paths used during construction and are not needed to reproduce the results |
+| `verification/` | Independent re-estimation (Online Appendix C): Eurostat Comext CN-8 trade pull, TARIC duty readings at CN-8 with ad valorem equivalents at Greek unit values, an independently written engine, the resulting inputs (`config_C.json`, `lines_C.csv`), results (`results_C.json`), the TARIC staging check and the Comext-Comtrade reconciliation. Run `build_inputs_C.py`, `run_C.py` and `check_staging_C.py` from that folder; the cached TARIC and WITS readings make the build run offline |
 
 ## How to run
 

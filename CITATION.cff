@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this code or data, please cite it as below."
 title: "Replication package: line-level incidence of the EU-Mercosur Interim Trade Agreement on Greece"
-version: "2.0.1"
-date-released: "2026-09-29"
+version: "2.1.0"
+date-released: "2026-10-02"
 license: MIT
 repository-code: "https://github.com/SAAAHco/EU-Mercosur-Greece"
 authors:
